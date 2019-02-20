@@ -17,5 +17,3 @@ echo "\n";
 print_r($data->getPrediction());
 echo "\n";
 print_r($data->getSquare());
-
-
