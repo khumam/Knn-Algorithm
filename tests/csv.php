@@ -8,7 +8,7 @@ require '../src/Knn.php';
 // $test = [[47, 5, 6], [3, 64, 3], [5, 7, 7], [10, 6, 1], [12, 9, 8], [11, 1, 2]]; //Sample Data
 // $label = ['a', 'a', 'a', 'b', 'b', 'c']; //Label Data. [7,5,6] labeled by a, [10,6,1] labeled by b, etc
 // $key = 3;     //optional. Default is 3
-$predict = [1, 7]; //Input
+$predict = [32, 13]; //Input
 
 // $csv = new KnnCsv('file.csv', $predict, 3);
 
@@ -16,4 +16,5 @@ $predict = [1, 7]; //Input
 // print_r($test);
 
 $data = new KnnCsv('file.csv', $predict, 3);
-echo $data->result;
+echo $data->result . "\n";
+print_r($data->result);

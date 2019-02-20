@@ -1,5 +1,11 @@
 <?php
 
+/*KNN from CSV
+This is a class for processing KNN from dataset in csv type.
+
+Author : Khoerul Umam
+Email : khoerul27@gmail.com*/
+
 class KnnCsv
 {
 
@@ -7,17 +13,21 @@ class KnnCsv
     public $sample;
     public $label;
     public $result;
+    public $newData;
+    public $prediction;
 
-    public function __construct($filePath, $predictData, $k = 3)
+    public function __construct($filePath, $predictData, $k = 3, $insertNewToCsv = false)
     {
-        $this->$filePath = $filePath;
-
-        $file = fopen('../dataset/' . $filePath, 'r');
+        $this->filePath = '../dataset/' . $filePath;
+        $this->prediction = $predictData;
+        $file = fopen($this->filePath, 'r');
         while (($line = fgetcsv($file)) !== false) {
 
             $resultCsv[] = $line;
         }
         fclose($file);
+
+        array_shift($resultCsv);
 
         for ($i = 0; $i < count($resultCsv); $i++) {
 
@@ -30,5 +40,54 @@ class KnnCsv
 
         $result = new Knn($this->sample, $predictData, $this->label, $k);
         $this->result = $result->result;
+
+        if ($insertNewToCsv == true) {
+
+            $this->addToCsv($predictData);
+
+        }
+
+    }
+
+    private function addToCsv($dataToInsert)
+    {
+
+        $newData = $dataToInsert;
+        array_push($newData, $this->result);
+
+        $stringToInput = '';
+        $it = new RecursiveIteratorIterator(new RecursiveArrayIterator($newData));
+        foreach ($it as $v) {
+            $stringToInput .= $v . ",";
+        }
+
+        $newString = rtrim($stringToInput, ', ');
+        $dataArrayToInsert[] = $newString;
+
+        $fileCsv = fopen($this->filePath, "a");
+
+        foreach ($dataArrayToInsert as $line) {
+            fputcsv($fileCsv, explode(',', $line));
+        }
+
+        fclose($fileCsv);
+    }
+
+    public function getLabel()
+    {
+
+        return $this->label;
+    }
+
+    public function getSample()
+    {
+
+        return $this->sample;
+    }
+
+    public function getPrediction()
+    {
+
+        return $this->prediction;
     }
 }

@@ -20,3 +20,33 @@ echo $data->result;     //output is c
 ```
 
 more examples are in example.php file
+
+### Using csv file as dataset
+You can use csv file as dataset. Here the tutorial how to use it.
+
+First create the dataset in csv format. Use this format below.
+
+```
+"parameter1", "parameter2", "parameter3", "etc", "label"
+```
+
+See file.csv inside dataset folder for example.
+Save it to dataset folder.
+
+The Code
+
+```php
+require('src/Knn.php');
+
+$csvFileName = 'files.csv';     //name of csv file, must containt .csv {required}
+$predict = [3,4,1];             //predict {required}
+$key = 3;                       //key {optional: default is 3}
+$inputToCsv = true;             //true, so the result will be inputed to csv file as the new sample. {optional: default is false}
+
+$data = new KnnCsv($csvFileName, $predict, $key, $inputToCsv);
+echo $data->result;
+
+```
+
+You can change the dataset folder in `src/KnnCsv.php`
+
