@@ -18,3 +18,5 @@ $predict = [1, 7]; //Input
 $data = new Knn($datasample, $predict, $datalabel, $key);
 echo $data->result;     //output is c
 ```
+
+more examples are in example.php file
