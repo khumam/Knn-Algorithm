@@ -1,6 +1,7 @@
 <?php
 
 require_once('KnnCsv.php');
+require_once('KnnTrain.php');
 
 /* This is a simple Machine Learning program using the KNN or K - Nearest Neighbor algorithm.
 Maybe the code below can't be read properly, so I try to make this program so that it can

@@ -15,6 +15,7 @@ $predict = [32, 13]; //Input
 // print_r($csv->sample);
 // print_r($test);
 
-$data = new KnnCsv('file.csv', $predict, 3);
-echo $data->result . "\n";
-print_r($data->result);
+$data = new KnnTrain('file.csv', 20, 1, 200);
+// $data->train(3, 1, 20);
+//echo $data->result;
+print_r($data->trainData);
