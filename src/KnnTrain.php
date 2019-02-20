@@ -4,8 +4,6 @@ require_once('KnnCsv.php');
 class KnnTrain
 {
 
-    public $trainData;
-
     public function __construct($filePath, $count, $offset, $limit)
     {
         $fileCsv = '../dataset/' . $filePath;
@@ -15,15 +13,11 @@ class KnnTrain
 
         for ($i = 0; $i < $count; $i++) {
 
-
             for ($j = 0; $j < $numcount; $j++) {
 
                 $train[$j] = rand($offset, $limit);
-
             }
             new KnnCsv($filePath, $train, 3, true);
         }
-
-        //$this->trainData = $train;
     }
 }

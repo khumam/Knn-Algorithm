@@ -50,3 +50,14 @@ echo $data->result;
 
 You can change the dataset folder in `src/KnnCsv.php`
 
+### Train data
+
+```php
+$fileCsvName = 'file.csv';          //csv file name
+$countData = 20;                    //Number of data will be inserted
+$offset = 1;                        //Create offset random number
+$limit = 200;                       //Create max random number
+
+new KnnTrain($fileCsvName, $countData, $offset, $limit);
+```
+
