@@ -1,5 +1,5 @@
-# Machine Learning KNN Algorithm
-This is a simple Machine Learning program using the KNN or K - Nearest Neighbor algorithm. Maybe the code can't be read properly, so I try to make this program so that it can be read better and for anyone who wants to use it is welcome.
+# KNN Algorithm
+This is a simple KNN or K - Nearest Neighbor algorithm. Maybe the code can't be read properly, so I try to make this program so that it can be read better, and for anyone who wants to use it is welcome.
 
 # Usage
 require the Knn.php inside src folder
