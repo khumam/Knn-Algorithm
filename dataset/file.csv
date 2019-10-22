@@ -1,4 +1,3 @@
-"weight", "size", "label"
 24,43,"Apple"
 24,22,"Mango"
 21,54,"Apple"
@@ -44,3 +43,4 @@
 70,117,Apple
 123,119,Apple
 17,129,Apple
+175,40,"The count of Label data is not match with Sample Data"

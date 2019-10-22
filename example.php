@@ -10,10 +10,3 @@ $predict = [1, 3, 6]; //Input
 $data = new Knn($datasample, $datalabel, $predict, $key);
 echo $data->result;
 echo "\n";
-// print_r($data->getSample());
-// echo "\n";
-// print_r($data->getLabel());
-// echo "\n";
-// print_r($data->getPrediction());
-// echo "\n";
-// print_r($data->getSquare());

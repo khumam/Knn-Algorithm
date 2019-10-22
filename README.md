@@ -15,7 +15,7 @@ $datalabel = ['a', 'a', 'b', 'b', 'c', 'c']; //Label Data. [2,3] labeled by a, [
 $key = 3;     //optional. Default is 3. Smallest key is more accurate
 $predict = [1, 7]; //Input
 
-$data = new Knn($datasample, $predict, $datalabel, $key);
+$data = new Knn($datasample, $datalabel, $predict, $key);
 echo $data->result;     //output is c
 ```
 
@@ -28,6 +28,12 @@ First create the dataset in csv format. Use this format below.
 
 ```
 "parameter1", "parameter2", "parameter3", "etc", "label"
+```
+
+example
+
+```
+21,43,14,"Apple"
 ```
 
 See file.csv inside dataset folder for example.

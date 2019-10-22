@@ -20,11 +20,11 @@ class KnnCsv
 
     public function __construct($filePath, $predictData = [], $k = 3, $insertNewToCsv = false)
     {
-        $this->filePath = '../dataset/' . $filePath;
+        $this->filePath = 'dataset/' . $filePath;
         $this->prediction = $predictData;
         $file = fopen($this->filePath, 'r');
 
-        while (($line = fgetcsv($file)) !== false) {
+        while (($line = fgetcsv($file))) {
 
             $resultCsv[] = $line;
         }
@@ -42,15 +42,13 @@ class KnnCsv
         $this->label = $label;
         $this->sampleLength = count($this->sample);
 
-        $result = new Knn($this->sample, $predictData, $this->label, $k);
+        $result = new Knn($this->sample, $this->label, $predictData, $k);
         $this->result = $result->result;
 
         if ($insertNewToCsv == true) {
 
             $this->addToCsv($predictData, $result->result);
-
         }
-
     }
 
     private function addToCsv($dataToInsert, $result)
