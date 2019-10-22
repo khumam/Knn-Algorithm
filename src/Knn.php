@@ -21,7 +21,7 @@ class Knn
     protected $label;           //Label Variabel
 
 
-    public function __construct($sample, $predictData, $dataLabel, $k)
+    public function __construct($sample, $dataLabel, $predictData, $k)
     {
 
         $this->sample = $sample;
@@ -34,7 +34,6 @@ class Knn
 
         //Send the Result
         $this->result = $this->label($dataLabel, $k);
-
     }
 
     //Function to count (x1 - x2)^2 , (y1-y2)^2 , etc
@@ -93,7 +92,6 @@ class Knn
 
         $sendToArrayOrder = $this->arrayOrder($orderByK);
         return $sendToArrayOrder;
-
     }
 
     //Function to searching match label. Counting the highest label that have lower values (shorter distance)
@@ -116,7 +114,6 @@ class Knn
     {
 
         return $this->sample;
-
     }
 
     //Get label raw
@@ -124,7 +121,6 @@ class Knn
     {
 
         return $this->label;
-
     }
 
     //Get Predict raw
@@ -132,7 +128,6 @@ class Knn
     {
 
         return $this->predictData;
-
     }
 
     //Get result from square root from (x1-x2)^2 + (y1-y2)^2 + etc
@@ -140,7 +135,5 @@ class Knn
     {
 
         return $this->resultSquare;
-
     }
-
 }
